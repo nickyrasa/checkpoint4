@@ -13,6 +13,14 @@ class PlayersFixtures extends Fixture
             'pseudo' => 'bobbydu38',
             'age' => 44,
         ],
+        [
+            'pseudo' => 'darksasuke',
+            'age' => 44,
+        ],
+        [
+            'pseudo' => 'billyBoy',
+            'age' => 44,
+        ],
 
     ];
     public function load(ObjectManager $manager): void
