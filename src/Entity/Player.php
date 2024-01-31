@@ -29,10 +29,13 @@ class Player
 
     #[ORM\ManyToOne(inversedBy: 'players')]
     private ?Position $position = null;
+    #[ORM\OneToMany(mappedBy: 'player', targetEntity: Post::class)]
+    private Collection $post;
 
     public function __construct()
     {
         $this->positions = new ArrayCollection();
+        $this->post = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -114,6 +117,36 @@ class Player
     public function setPosition(?Position $position): static
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Post>
+     */
+    public function getPost(): Collection
+    {
+        return $this->post;
+    }
+
+    public function addPost(Post $post): static
+    {
+        if (!$this->post->contains($post)) {
+            $this->post->add($post);
+            $post->setPlayer($this);
+        }
+
+        return $this;
+    }
+
+    public function removePost(Post $post): static
+    {
+        if ($this->post->removeElement($post)) {
+// set the owning side to null (unless already changed)
+            if ($post->getPlayer() === $this) {
+                $post->setPlayer(null);
+            }
+        }
 
         return $this;
     }
