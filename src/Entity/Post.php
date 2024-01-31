@@ -14,7 +14,7 @@ class Post
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $postName = null;
+    private ?string $postTitle = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
@@ -30,14 +30,14 @@ class Post
         return $this->id;
     }
 
-    public function getPostName(): ?string
+    public function getPostTitle(): ?string
     {
-        return $this->postName;
+        return $this->postTitle;
     }
 
-    public function setPostName(string $postName): static
+    public function setPostTitle(string $postTitle): static
     {
-        $this->postName = $postName;
+        $this->postTitle = $postTitle;
 
         return $this;
     }
