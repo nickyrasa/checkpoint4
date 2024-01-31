@@ -3,9 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[Vich\Uploadable]
 class Post
 {
     #[ORM\Id]
@@ -20,10 +24,17 @@ class Post
     private ?string $description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $picture = null;
+    protected ?string $picture = null;
 
-    #[ORM\ManyToOne(inversedBy: 'post')]
-    private ?Player $player = null;
+
+    #[Vich\UploadableField(mapping: 'picture_file', fileNameProperty: 'picture')]
+    protected ?File $pictureFile = null;
+
+    #[ORM\ManyToOne(inversedBy: 'PostedBy')]
+    private ?Player $postedBy = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $details = null;
 
     public function getId(): ?int
     {
@@ -65,15 +76,37 @@ class Post
 
         return $this;
     }
-
-    public function getPlayer(): ?Player
+    public function getPictureFile(): ?File
     {
-        return $this->player;
+        return $this->pictureFile;
     }
 
-    public function setPlayer(?Player $player): static
+    public function setPictureFile(?File $picture = null): Post
     {
-        $this->player = $player;
+        $this->pictureFile = $picture;
+
+        return $this;
+    }
+    public function getPostedBy(): ?Player
+    {
+        return $this->postedBy;
+    }
+
+    public function setPostedBy(?Player $postedBy): static
+    {
+        $this->postedBy = $postedBy;
+
+        return $this;
+    }
+
+    public function getDetails(): ?string
+    {
+        return $this->details;
+    }
+
+    public function setDetails(?string $details): static
+    {
+        $this->details = $details;
 
         return $this;
     }

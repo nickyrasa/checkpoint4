@@ -29,13 +29,14 @@ class Player
 
     #[ORM\ManyToOne(inversedBy: 'players')]
     private ?Position $position = null;
-    #[ORM\OneToMany(mappedBy: 'player', targetEntity: Post::class)]
-    private Collection $post;
+
+    #[ORM\OneToMany(mappedBy: 'PostedBy', targetEntity: Post::class)]
+    private Collection $postedBy;
 
     public function __construct()
     {
         $this->positions = new ArrayCollection();
-        $this->post = new ArrayCollection();
+        $this->postedBy = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -124,27 +125,27 @@ class Player
     /**
      * @return Collection<int, Post>
      */
-    public function getPost(): Collection
+    public function getPostedBy(): Collection
     {
-        return $this->post;
+        return $this->postedBy;
     }
 
-    public function addPost(Post $post): static
+    public function addPostedBy(Post $postedBy): static
     {
-        if (!$this->post->contains($post)) {
-            $this->post->add($post);
-            $post->setPlayer($this);
+        if (!$this->postedBy->contains($postedBy)) {
+            $this->postedBy->add($postedBy);
+            $postedBy->setpostedBy($this);
         }
 
         return $this;
     }
 
-    public function removePost(Post $post): static
+    public function removePostedBy(Post $postedBy): static
     {
-        if ($this->post->removeElement($post)) {
-// set the owning side to null (unless already changed)
-            if ($post->getPlayer() === $this) {
-                $post->setPlayer(null);
+        if ($this->postedBy->removeElement($postedBy)) {
+            // set the owning side to null (unless already changed)
+            if ($postedBy->getPostedBy() === $this) {
+                $postedBy->setPostedBy(null);
             }
         }
 
