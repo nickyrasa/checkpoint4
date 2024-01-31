@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block body %}
+    <h1>Post</h1>
+
+
+  
+                {{ post.postTitle }}
+
+           {{ post.description }}
+  
+          <img src="{{ asset('uploads/images/picture/' ~ post.picture) }}" class="d-block w-50" alt="{{ post.postTitle }}">
+            
+           {{ post.Details }}
+     
+    <a href="{{ path('app_post_index') }}">back to list</a>
+
+    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+
+    {{ include('post/_delete_form.html.twig') }}
+{% endblock %}

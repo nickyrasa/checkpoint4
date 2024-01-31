@@ -37,7 +37,7 @@ class PostsFixtures extends Fixture
             $posts->setPostTitle($postsFixture['postTitle']);
             $posts->setDescription($postsFixture['description']);
             $posts->setPicture($postsFixture['picture']);
-            $posts->setPlayer($this->getReference($postsFixture['player']));
+            $posts->setPostedBy($this->getReference($postsFixture['player']));
             $manager->persist($posts);
         }
 
