@@ -9,4 +9,10 @@
 			<i class="bi bi-person-square"></i>
 		</a>
 	</li>
+	{% if app.user %}
+    {{ app.user.email }}
+    <a href="{{ path('app_logout') }}"><i class="bi bi-box-arrow-left"></i></a>
+{% else %}
+    <a href="{{ path('app_login') }}"><i class="bi bi-box-arrow-in-right"></i></a>
+{% endif %}
 </ul>

@@ -1,0 +1,36 @@
+@import "~bootstrap/scss/bootstrap";
+
+$backgroundMainColor: #4b4b4b;
+$backgroundNavBar: #ffb038;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: $backgroundMainColor;
+}
+
+.navbar-mobile {
+    width: 85%;
+    height: 56px;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $backgroundNavBar;
+    margin: 0;
+    bottom: 1vh;
+    border-radius: 15px;
+    @include media-breakpoint-up(md) {
+        width: 35%;
+    }
+}
+
+
+.size-carousel {
+    height: 50vh;
+}
