@@ -1,6 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
-$backgroundMainColor: #4b4b4b;
+$backgroundMainColor: #1a1a1a;
 $backgroundNavBar: #ffb038;
 
 * {
@@ -12,6 +12,8 @@ $backgroundNavBar: #ffb038;
 
 body {
     background-color: $backgroundMainColor;
+    // padding-bottom: 25%;
+    color: #f9f9f9;
 }
 
 .navbar-mobile {
@@ -30,7 +32,51 @@ body {
     }
 }
 
+.carousel-size {
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: 65%;
+        padding-top: 2rem;
+    }
+}
 
 .size-carousel {
     height: 50vh;
+}
+
+.carousel-indicators {
+    width: 7px;
+}
+
+.title-center {
+    position: absolute;
+    left: 19vw;
+    bottom: 77vh;
+    font-size: 2.5rem;
+    @include media-breakpoint-up(md) {
+        font-size: 4rem;
+        left: 19vw;
+        top: 89vh;
+    }
+}
+
+.title-center-bis {
+    position: absolute;
+    left: 37vw;
+    bottom: 73vh;
+    font-size: 2.5rem;
+        @include media-breakpoint-up(md) {
+            font-size: 4rem;
+        left: 30vw;
+        top: 97vh;
+    }
+}
+
+.bi-youtube,
+.bi-twitch,
+.bi-discord {
+    font-size: 1rem;
+    @include media-breakpoint-up(md) {
+        font-size: 3rem;
+    }
 }
