@@ -33,10 +33,14 @@ class Player
     #[ORM\OneToMany(mappedBy: 'PostedBy', targetEntity: Post::class)]
     private Collection $postedBy;
 
+    #[ORM\ManyToMany(targetEntity: Post::class, inversedBy: 'players')]
+    private Collection $post;
+
     public function __construct()
     {
         $this->positions = new ArrayCollection();
         $this->postedBy = new ArrayCollection();
+        $this->post = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -148,6 +152,30 @@ class Player
                 $postedBy->setPostedBy(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Post>
+     */
+    public function getPost(): Collection
+    {
+        return $this->post;
+    }
+
+    public function addPost(Post $post): static
+    {
+        if (!$this->post->contains($post)) {
+            $this->post->add($post);
+        }
+
+        return $this;
+    }
+
+    public function removePost(Post $post): static
+    {
+        $this->post->removeElement($post);
 
         return $this;
     }

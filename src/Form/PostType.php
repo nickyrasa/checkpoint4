@@ -34,6 +34,7 @@ class PostType extends AbstractType
             ->add('postedBy', EntityType::class, [
                 'class' => Player::class,
                 'choice_label' => 'pseudo',
+                'label' => 'Posté par'
             ]);
     }
 

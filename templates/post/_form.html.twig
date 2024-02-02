@@ -1,4 +1,11 @@
+
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+<div class="mt-3 grid-form gap-3 mx-5">
+	{{ form_label(form.postTitle) }}{{ form_widget(form.postTitle) }}
+	{{ form_label(form.description) }}{{ form_widget(form.description) }}
+	{{ form_label(form.pictureFile) }}{{ form_widget(form.pictureFile) }}
+	{{ form_label(form.details) }}{{ form_widget(form.details) }}
+    {{ form_label(form.postedBy) }}{{ form_widget(form.postedBy) }}
+</div>
+  <button class="btn">{{ button_label|default('Publier votre post') }}</button>
+  {{ form_end(form) }}
