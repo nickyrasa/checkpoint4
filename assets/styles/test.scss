@@ -93,26 +93,26 @@ body {
 .title-center {
     position: absolute;
     left: 19px;
-    top: 190px;
+    top: 247px;
     font-size: 2.5rem;
 
     @include media-breakpoint-up(md) {
         font-size: 4rem;
         left: 19vw;
-        top: 92vh;
+        top: 112vh;
     }
 }
 
 .title-center-bis {
     position: absolute;
     left: 85px;
-    top: 228px;
+    top: 285px;
     font-size: 2.5rem;
 
     @include media-breakpoint-up(md) {
         font-size: 4rem;
         left: 30vw;
-        top: 97vh;
+        top: 120vh;
     }
 }
 
@@ -187,7 +187,7 @@ body {
 }
 .login-desktop {
     @include media-breakpoint-up(md) {
-    width:50vw;
+        width: 50vw;
     }
 }
 

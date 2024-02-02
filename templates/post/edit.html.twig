@@ -1,13 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Post{% endblock %}
+{% block title %}Edition d'un post
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Post</h1>
+	<img src="{{ asset('build/images/fond_login.jpg') }}" alt="le logo de plateforme the league" class="object-fit-cover bg-image position-relative dark-background">
+	<div class="position-absolute login justify-content-center post-desktop">
+		<h1 class="text-uppercase fw-bold text-center py-4 yellow-title ">Edition du
+			<post></post>
+		</h1>
 
-    {{ include('post/_form.html.twig', {'button_label': 'Update'}) }}
+		{{ include('post/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-    <a href="{{ path('app_post_index') }}">back to list</a>
+		<button class=" button-size button-CRUD d-flex mx-auto py-1 my-4 justify-content-center ">
+			<a href="{{ path('app_home') }}" class="link-underline link-underline-opacity-0 text-dark">Retour</a>
+		</button>
 
-    {{ include('post/_delete_form.html.twig') }}
+		<div class="pb-5 mb-5">{{ include('post/_delete_form.html.twig') }}</div>
+	</div>
 {% endblock %}
