@@ -7,5 +7,5 @@
 	{{ form_label(form.details) }}{{ form_widget(form.details) }}
     {{ form_label(form.postedBy) }}{{ form_widget(form.postedBy) }}
 </div>
-  <button class="btn">{{ button_label|default('Publier votre post') }}</button>
+  <button class="button-CRUD d-flex mx-auto py-1 my-4 w-25 justify-content-center">{{ button_label|default('Publier') }}</button>
   {{ form_end(form) }}
