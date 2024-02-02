@@ -5,7 +5,7 @@
 
 {% block body %}
 	<div>
-		<img src="{{ asset('build/images/theleague_port.jpg') }}" alt="le logo de plateforme the league" class="w-100">
+		<img src="{{ asset('build/images/theleague_port.jpg') }}" alt="le logo de plateforme the league" class="w-100 pb-5">
 	</div>
 
 	<div id="carouselExampleCaptions" class="carousel slide">
@@ -37,8 +37,14 @@
 	</div>
 
 	<div class="container px-3 py-5 d-flex flex-column align-items-center">
-		<h2 class="align-items-start text-uppercase fw-bold py-5"><i class="bi bi-arrow-right-square-fill"></i> The league c'est</h2>
-		<p class="w-75 fs-5">Le plus grand événement en France pour la communauté PC, avec <strong>trois compétitions</strong> par an, réunissant plus de <strong>70 personnes</strong> réparties dans 10 équipes sur un serveur privé.</p>
+		<h2 class="align-items-start text-uppercase fw-bold py-5">
+			<i class="bi bi-arrow-right-square-fill"></i>
+			The league c'est</h2>
+		<p class="w-75 fs-5">Le plus grand événement en France pour la communauté PC, avec
+			<strong>trois compétitions</strong>
+			par an, réunissant plus de
+			<strong>70 personnes</strong>
+			réparties dans 10 équipes sur un serveur privé.</p>
 	</div>
 
 	<div class="w-50 mx-auto d-none d-md-block">
@@ -46,7 +52,9 @@
 
 		<div class="row featurette pt-5">
 			<div class="col-md-7">
-				<h2 class="featurette-heading fw-normal lh-1 fw-bolder"><i class="bi bi-discord"></i> Un channel Discord</h2>
+				<h2 class="featurette-heading fw-normal lh-1 fw-bolder">
+					<i class="bi bi-discord"></i>
+					Un channel Discord</h2>
 				<p class="lead">Une communauté active de plus de 150 membres. Retrouvez-vous sur le channel pour partir en équipe de 3 ou de 5. Organisation de match 5v5 tous les mardis et jeudis.</p>
 			</div>
 			<div class="col-md-5">
@@ -57,29 +65,28 @@
 
 		<div class="row featurette py-5">
 			<div class="col-md-7 order-md-2">
-				<h2 class="featurette-heading fw-normal lh-1 fw-bolder"><i class="bi bi-twitch"></i> Une chaine Twitch</h2>
-				<p class="lead">Tous les matches sont diffusés en direct avec des commentateurs.</br>
-           Une chaine twitch avec plus de 200 followers.Les matches sont diffusés le vendredi, samedi et dimanche de 18h30 à 23h45.</p>
-			</div>
-			<div class="col-md-5 order-md-1">
-				<img src="{{ asset('build/images/featurette-2.jpg') }}" alt="le logo de plateforme the league" class="w-100">
-			</div>
-		</div>
-
-
-		<div class="row featurette pb-5 mb-5">
-			<div class="col-md-7">
-				<h2 class="featurette-heading fw-normal lh-1 fw-bolder"><i class="bi bi-youtube"></i> Une chaine Youtube</h2>
-				<p class="lead">Une chaine Youtube, active, qui vous permet de revivre tous les moments importants de tous les matches de la saison régulière et des playoffs.</p>
-			</div>
-			<div class="col-md-5">
-				<img src="{{ asset('build/images/featurette-1.jpg') }}" alt="le logo de plateforme the league" class="w-100">
-			</div>
-		</div>
-
-
+				<h2 class="featurette-heading fw-normal lh-1 fw-bolder">
+					<i class="bi bi-twitch"></i>
+					Une chaine Twitch</h2>
+				<p class="lead">Tous les matches sont diffusés en direct avec des commentateurs.</p>
+			</br>
+			Une chaine twitch avec plus de 200 followers.Les matches sont diffusés le vendredi, samedi et dimanche de 18h30 à 23h45.</p>
 	</div>
-	<div>
-		<img src="{{ asset('build/images/footer.jpg') }}" alt="le logo de plateforme the league" class="w-100 gradient">
+	<div class="col-md-5 order-md-1">
+		<img src="{{ asset('build/images/featurette-2.jpg') }}" alt="le logo de plateforme the league" class="w-100">
 	</div>
-{% endblock %}
+</div>
+
+
+<div class="row featurette pb-5 mb-5">
+	<div class="col-md-7">
+		<h2 class="featurette-heading fw-normal lh-1 fw-bolder">
+			<i class="bi bi-youtube"></i>
+			Une chaine Youtube</h2>
+		<p class="lead">Une chaine Youtube, active, qui vous permet de revivre tous les moments importants de tous les matches de la saison régulière et des playoffs.</p>
+	</div>
+	<div class="col-md-5">
+		<img src="{{ asset('build/images/featurette-1.jpg') }}" alt="le logo de plateforme the league" class="w-100">
+	</div>
+</div></div><div>
+<img src="{{ asset('build/images/footer.jpg') }}" alt="le logo de plateforme the league" class="w-100 gradient"></div>{% endblock %}

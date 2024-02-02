@@ -1,19 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Post{% endblock %}
+{% block title %}Création d'un nouveau post
+{% endblock %}
 
 {% block body %}
 
-<img src="{{ asset('build/images/fond_login.jpg') }}" alt="le logo de plateforme the league" class="object-fit-cover bg-image position-relative dark-background" >
-    
-    <div class="position-absolute login justify-content-center post-desktop">
-    <h1 class="text-center py-4 yellow-title"> Créer un nouveau post </h1>
+	<img src="{{ asset('build/images/fond_login.jpg') }}" alt="le logo de plateforme the league" class="object-fit-cover bg-image position-relative dark-background">
 
-    {{ include('post/_form.html.twig') }}
+	<div class="position-absolute login justify-content-center post-desktop">
+		<h1 class="text-center py-4 yellow-title">
+			Créer un nouveau post
+		</h1>
 
-    <button class="button-CRUD d-flex mx-auto py-1 w-25 justify-content-center"><a href="{{ path('app_home') }}" class="link-underline link-underline-opacity-0 text-dark">Retour</a></button>
-</div>
-</div>
+		{{ include('post/_form.html.twig') }}
 
-{% endblock %}
-
+		<button class="button-CRUD d-flex mx-auto py-1 w-25 justify-content-center">
+			<a href="{{ path('app_home') }}" class="link-underline link-underline-opacity-0 text-dark">Retour</a>
+		</button>
+	</div>
+</div>{% endblock %}
