@@ -8,12 +8,21 @@ $backgroundNavBar: #ffb038;
     padding: 0;
     list-style: none;
     scroll-behavior: smooth;
+    text-decoration: none;
+    border-color: transparent;
 }
 
 body {
     background-color: $backgroundMainColor;
-    // padding-bottom: 25%;
     color: #f9f9f9;
+}
+
+.button-CRUD {
+    background-color: $backgroundNavBar;
+    font-size: large;
+    font-weight: bold;
+    color: #1a1a1a;
+    border-radius: 10px;
 }
 
 .navbar-mobile {
@@ -27,6 +36,9 @@ body {
     margin: 0;
     bottom: 1vh;
     border-radius: 15px;
+    color: #1a1a1a;
+    font-size: x-large;
+
     @include media-breakpoint-up(md) {
         width: 35%;
     }
@@ -34,49 +46,164 @@ body {
 
 .carousel-size {
     width: 100%;
+
     @include media-breakpoint-up(md) {
         width: 65%;
         padding-top: 2rem;
     }
 }
 
+.detail-carousel {
+    position: relative;
+    top: 20vh;
+    text-align: start;
+
+    @include media-breakpoint-up(md) {
+        position: relative;
+        top: 13vh;
+        text-align: center;
+    }
+}
+
+.carousel-inner {
+    height: 65vh;
+}
+
 .size-carousel {
     height: 50vh;
 }
 
-.carousel-indicators {
-    width: 7px;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: flex;
+    position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    height: 15vh;
+    top: 102px;
+}
+
+.carousel-caption {
+    left: 5%;
+    right: 5%;
 }
 
 .title-center {
     position: absolute;
-    left: 19vw;
-    bottom: 77vh;
+    left: 19px;
+    top: 190px;
     font-size: 2.5rem;
+
     @include media-breakpoint-up(md) {
         font-size: 4rem;
         left: 19vw;
-        top: 89vh;
+        top: 92vh;
     }
 }
 
 .title-center-bis {
     position: absolute;
-    left: 37vw;
-    bottom: 73vh;
+    left: 85px;
+    top: 228px;
     font-size: 2.5rem;
-        @include media-breakpoint-up(md) {
-            font-size: 4rem;
+
+    @include media-breakpoint-up(md) {
+        font-size: 4rem;
         left: 30vw;
         top: 97vh;
     }
 }
 
+.yellow-title {
+    color: $backgroundNavBar;
+}
+
 .bi-youtube,
 .bi-twitch,
 .bi-discord {
-    font-size: 1rem;
+    font-size: 2.5rem;
+
     @include media-breakpoint-up(md) {
         font-size: 3rem;
     }
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+}
+
+.login {
+    top: 3vh;
+}
+
+.dark-background {
+    background-color: #1a1a1a;
+    background-blend-mode: screen;
+    opacity: 40%;
+
+    @include media-breakpoint-up(md) {
+        background-color: transparent;
+        opacity: unset;
+    }
+}
+
+.bg-image {
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        width: fit-content;
+    }
+}
+
+.post-desktop {
+    @include media-breakpoint-up(md) {
+        left: 50vw;
+        top: 10vh;
+    }
+}
+
+.logo-login {
+    width: 46vw;
+
+    @include media-breakpoint-up(md) {
+        width: 19vw;
+        position: absolute;
+        left: 61vw;
+        bottom: -32vh;
+    }
+}
+
+.form-login {
+    @include media-breakpoint-up(md) {
+        width: 19vw;
+        position: absolute;
+        left: 61vw;
+        bottom: -72vh;
+    }
+}
+.login-desktop {
+    @include media-breakpoint-up(md) {
+    width:50vw;
+    }
+}
+
+p {
+    text-justify: auto;
+}
+
+strong,
+h2 {
+    color: $backgroundNavBar;
+}
+
+textarea,
+select {
+    width: 100%;
+    min-height: 2lh;
+    max-height: 5lh;
+    border-radius: 10px;
 }

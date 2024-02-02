@@ -1,93 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home
+{% endblock %}
 
 {% block body %}
-<div>
-<img src="{{ asset('build/images/theleague_port.jpg') }}" alt="le logo de plateforme the league" class="w-100">
-</div>
+	<div>
+		<img src="{{ asset('build/images/theleague_port.jpg') }}" alt="le logo de plateforme the league" class="w-100">
+	</div>
 
-<div id="carouselExampleCaptions" class="carousel slide">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-  {% for key, post in showPosts %}
-    <div class="carousel-item {% if key == 0 %} active {% endif %}">
-      <a href="{{ path('app_post_show', {'id': post.id}) }}"><img src="{{ asset('build/images/' ~ post.picture) }}" class="d-flex mx-auto carousel-size " alt="{{ post.postTitle }}"></a>
-      <div class="carousel-caption">
-        <p class="d-none d-md-block">Some representative placeholder content for the first slide Some representative placeholder content for the first slide.</p>
-      <p>{{ post.details }}</p>
-      </div>
-    </div>
-    
-    {% endfor %}
-  </div>
+	<div id="carouselExampleCaptions" class="carousel slide">
+		<div class="carousel-inner">
+			{% for key, post in showPosts %}
+				<div class="carousel-item {% if key == 0 %} active {% endif %}">
+					<a href="{{ path('app_post_show', {'id': post.id}) }}"><img src="{{ asset('uploads/images/picture/' ~ post.picture) }}" class="d-flex mx-auto size-carousel gradient " alt="{{ post.postTitle }}"></a>
+					<div class="carousel-caption d-flex flex-column mx-auto">
+						<h4 class="detail-carousel fw-bolder">{{ post.postTitle }}</h4>
+						<p class="detail-carousel">{{ post.description }}</p>
+					</div>
+				</div>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<div>
-<h1 class="text-uppercase fw-bold title-center">Derniers</h1>
-<h4 class="text-uppercase fst-italic title-center-bis">Matchs</h4>
-</div>
+			{% endfor %}
+		</div>
 
-<div class="container px-5 d-flex flex-column align-items-center pt-5">
-  <h2 class="text-uppercase fw-bold">The league c'est</h2>
-  <p>Le plus grand événement en France pour la communauté PC, avec trois compétitions par an, réunissant plus de 70 personnes réparties dans 10 équipes sur un serveur privé.</p>
-</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<div>
+		<h1 class="text-uppercase fw-bold title-center">Derniers</h1>
+		<h4 class="text-uppercase fst-italic title-center-bis">Posts</h4>
+	</div>
 
-<div class="d-flex justify-content-evenly w-50 mx-auto py-5">
-<i class="bi bi-youtube"></i><i class="bi bi-twitch"></i><i class="bi bi-discord"></i>
-</div>
+	<div class="container px-3 py-5 d-flex flex-column align-items-center">
+		<h2 class="align-items-start text-uppercase fw-bold py-5"><i class="bi bi-arrow-right-square-fill"></i> The league c'est</h2>
+		<p class="w-75 fs-5">Le plus grand événement en France pour la communauté PC, avec <strong>trois compétitions</strong> par an, réunissant plus de <strong>70 personnes</strong> réparties dans 10 équipes sur un serveur privé.</p>
+	</div>
+
+	<div class="w-50 mx-auto d-none d-md-block">
 
 
+		<div class="row featurette pt-5">
+			<div class="col-md-7">
+				<h2 class="featurette-heading fw-normal lh-1 fw-bolder"><i class="bi bi-discord"></i> Un channel Discord</h2>
+				<p class="lead">Une communauté active de plus de 150 membres. Retrouvez-vous sur le channel pour partir en équipe de 3 ou de 5. Organisation de match 5v5 tous les mardis et jeudis.</p>
+			</div>
+			<div class="col-md-5">
+				<img src="{{ asset('build/images/featurette-3.png') }}" alt="le logo de plateforme the league" class="w-100">
+			</div>
+		</div>
 
-{# --------------------- ACCORDION ---------------------  #}
+
+		<div class="row featurette py-5">
+			<div class="col-md-7 order-md-2">
+				<h2 class="featurette-heading fw-normal lh-1 fw-bolder"><i class="bi bi-twitch"></i> Une chaine Twitch</h2>
+				<p class="lead">Tous les matches sont diffusés en direct avec des commentateurs.</br>
+           Une chaine twitch avec plus de 200 followers.Les matches sont diffusés le vendredi, samedi et dimanche de 18h30 à 23h45.</p>
+			</div>
+			<div class="col-md-5 order-md-1">
+				<img src="{{ asset('build/images/featurette-2.jpg') }}" alt="le logo de plateforme the league" class="w-100">
+			</div>
+		</div>
 
 
-<div class="d-none d-md-block accordion accordion-flush w-75 mx-auto py-5" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-    </div>
-  </div>
-</div>
+		<div class="row featurette pb-5 mb-5">
+			<div class="col-md-7">
+				<h2 class="featurette-heading fw-normal lh-1 fw-bolder"><i class="bi bi-youtube"></i> Une chaine Youtube</h2>
+				<p class="lead">Une chaine Youtube, active, qui vous permet de revivre tous les moments importants de tous les matches de la saison régulière et des playoffs.</p>
+			</div>
+			<div class="col-md-5">
+				<img src="{{ asset('build/images/featurette-1.jpg') }}" alt="le logo de plateforme the league" class="w-100">
+			</div>
+		</div>
 
-<div>
-<img src="{{ asset('build/images/footer.jpg') }}" alt="le logo de plateforme the league" class="w-100">
-</div>
+
+	</div>
+	<div>
+		<img src="{{ asset('build/images/footer.jpg') }}" alt="le logo de plateforme the league" class="w-100 gradient">
+	</div>
 {% endblock %}

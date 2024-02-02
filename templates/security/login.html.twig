@@ -16,25 +16,38 @@
 				<a href="{{ path('app_logout') }}">Logout</a>
 			</div>
 		{% endif %}
+			<img src="{{ asset('build/images/background-login-petit.jpg') }}" class="d-md-none position-relative bg-image w-100 dark-background"/>
+		
+		
+			<img src="{{ asset('build/images/background-login-grand.jpg') }}" class="d-none d-md-block object-fit-cover position-relative"/>
 
-		<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-		<label for="username">Email</label>
-		<input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
-		<label for="password">Password</label>
-		<input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+<div class="w-75 mx-auto">
+	
+		<div class="position-absolute login justify-content-center w-75 mx-auto">
+			<img src="{{ asset('build/images/logo_theleague2k20_petit.png') }}" class="d-flex mx-auto py-5 my-5 logo-login"/>
+		<div class="form-login">
+			<h1 class="h3 mb-3 font-weight-normal text-center py-5 ">Vous connectez sur </br><strong>The League</strong></h1>
+			
+				<label for="username">Email</label>
+				<input type="email" value="{{ last_username }}" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
+				<label for="password">Password</label>
+				<input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
+			
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
-		<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="checkbox mb-3">
+					<label>
+						<input type="checkbox" name="_remember_me">
+						Se souvenir de moi
+					</label>
+					
+				</div>
+			
 
-		<div class="checkbox mb-3">
-			<label>
-				<input type="checkbox" name="_remember_me">
-				Remember me
-			</label>
+				<button class="button-CRUD w-100" type="submit">
+					Se connecter
+				</button>
+			</div>
 		</div>
-
-
-		<button class="btn btn-lg btn-primary" type="submit">
-			Sign in
-		</button>
 	</form>
 {% endblock %}

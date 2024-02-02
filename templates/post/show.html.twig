@@ -1,23 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post{% endblock %}
+{% block title %}Post
+{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+	<div class="w-100 d-flex flex-column mx-auto">
+		
+			<img src="{{ asset('uploads/images/picture/' ~ post.picture) }}" class="d-block w-100" alt="{{ post.postTitle }}">
+<div class="container">
+			<h1>{{ post.postTitle }}</h1>
 
+			<p class=>{{ post.description }}</p>
 
-  
-                {{ post.postTitle }}
+			{{ post.Details }}
 
-           {{ post.description }}
-  
-          <img src="{{ asset('uploads/images/picture/' ~ post.picture) }}" class="d-block w-50" alt="{{ post.postTitle }}">
-            
-           {{ post.Details }}
-     
-    <a href="{{ path('app_post_index') }}">back to list</a>
+			<div class="d-grid gap-2 col-6 w-50 mx-auto py-5">
+				<button class="button-CRUD ">
+					<a href="{{ path('app_post_index') }}" class="link-underline link-underline-opacity-0 text-dark">Retour</a>
+				</button>
 
-    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+				<button class="button-CRUD">
+					<a href="{{ path('app_post_edit', {'id': post.id}) }}" class="link-underline link-underline-opacity-0 text-dark">Editer</a>
+				</button>
 
-    {{ include('post/_delete_form.html.twig') }}
-{% endblock %}
+				{{ include('post/_delete_form.html.twig') }}
+			</div>
+		</div>
+	{% endblock %}
